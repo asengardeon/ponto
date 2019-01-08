@@ -17,7 +17,10 @@
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
         "zendframework/zend-db": "^2.9",
-        "zendframework/zend-form": "^2.13"
+        "zendframework/zend-form": "^2.13",
+        "zendframework/zend-i18n": "^2.9",
+        "zendframework/zend-hydrator": "^3.0",
+        "zendframework/zend-navigation": "^2.9"
     },
     "autoload": {
         "psr-4": {
