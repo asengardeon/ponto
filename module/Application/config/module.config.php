@@ -10,28 +10,18 @@ namespace Application;
 use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
-use Album\Controller\AlbumController;
+
 
 
 return [
     'router' => [
         'routes' => [
-            // 'home' => [
-            //     'type' => Literal::class,
-            //     'options' => [
-            //         'route'    => '/',
-            //         'defaults' => [
-            //             'controller' => Controller\IndexController::class,
-            //             'action'     => 'index',
-            //         ],
-            //     ],
-            // ],
             'home' => [
-                'type' => \Zend\Router\Http\Literal::class,
+                'type' => Literal::class,
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => AlbumController::class, // <-- change here
+                        'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -69,4 +59,34 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'navigation' => [
+        'default' => [
+            [
+                'label' => 'Home',
+                'route' => 'home',
+            ],
+            [
+                'label' => 'Album',
+                'route' => 'album',
+                'pages' => [
+                    [
+                        'label'  => 'Add',
+                        'route'  => 'album',
+                        'action' => 'add',
+                    ],
+                    [
+                        'label'  => 'Edit',
+                        'route'  => 'album',
+                        'action' => 'edit',
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'album',
+                        'action' => 'delete',
+                    ],
+                ],
+            ],
+        ],
+    ],
+
 ];
